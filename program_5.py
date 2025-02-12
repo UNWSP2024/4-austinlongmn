@@ -40,23 +40,31 @@ def main():
     spent = 1.0  # initialize for while loop
     total = 0.0
 
+    # get budget
     budget = get_input("Enter your budget for the month: $",
                        float,
                        "You must enter a valid positive number.",
                        lambda amount: amount >= 0)
 
+    # loop for each item
     while True:
+        # input price from user
         spent = get_input("Enter the price of the item (signal EOF or enter 0 if you are done): $",
                           float,
                           "You must enter a valid number (no currency symbols).",
                           lambda price: price >= 0)
 
+        # if 0, then we are done.
         if spent == 0:
             break
 
+        # add item to total
         total += spent
 
+    # get difference
     difference = budget - total
+
+    # display output to user
     if difference < 0:
         print(f"You are ${-difference:.2f} over budget.")
     else:
