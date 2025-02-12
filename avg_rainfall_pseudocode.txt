@@ -1,0 +1,12 @@
+Start
+Input budget amount
+While still more items to budget
+    Input item price
+    Add price to total
+End loop
+If total is more than budget amount
+    Display You are [total - amount] over budget.
+Else
+    Display You are [amount - total] under budget. Good job!
+End if
+End
